@@ -7,31 +7,38 @@ import { map } from 'rxjs';
 })
 export class RolService {
 
-  api="https://mantech-back.herokuapp.com/api/RolUsuarios/";
+  api="https://mantech-back.herokuapp.com/api/CatRolUsuarios/";
   constructor(private http : HttpClient) { }
 
-  postEmpresa(data: any){
+  postRol(data: any){
   return this.http.post<any>(this.api, data)
   .pipe(map((res:any)=>{
     return res;
     }))
   }
 
-  getEmpresas(){
+  getRol(){
     return this.http.get<any>(this.api)
     .pipe(map((res:any)=>{
       return res;
     }))
   }
 
-  updateEmpresa(data: any, id:number){
+  getRolID(id:number){
+    return this.http.get<any>(this.api+"/"+id)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
+
+  updateRol(data: any, id:number){
     return this.http.put<any>(this.api+ id, data)
     .pipe(map((res:any)=>{
       return res;
     }))
   }
 
-  deleteEmpresa(id: number){
+  deleteRol(id: number){
     return this.http.delete<any>(this.api+ id)
     .pipe(map((res:any)=>{
       return res;

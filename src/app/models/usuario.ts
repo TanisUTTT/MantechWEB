@@ -7,8 +7,8 @@ export class UsuarioModel{
     correo!:string ;
     contrasena!:string ;
     clave_empresa!:string ;
-    fk_empresa!:Object;
-    fk_rol!:Object;
-    fk_statususuario!:Object;
+    fk_empresa!:any;
+    fk_rol!:any;
+    fk_statususuario!:any;
     
 }

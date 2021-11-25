@@ -7,31 +7,38 @@ import { map } from 'rxjs';
 })
 export class StatusUsuarioService {
 
-  api="https://mantech-back.herokuapp.com/api/StatusUsuarios/";
+  api="https://mantech-back.herokuapp.com/api/CatStatusUsuarios/";
   constructor(private http : HttpClient) { }
 
-  postStatusStatus(data: any){
+  postStatus(data: any){
   return this.http.post<any>(this.api, data)
   .pipe(map((res:any)=>{
     return res;
     }))
   }
 
-  getStatusStatus(){
+  getStatus(){
     return this.http.get<any>(this.api)
     .pipe(map((res:any)=>{
       return res;
     }))
   }
 
-  updateStatusStatus(data: any, id:number){
+  getStatusID(id:number){
+    return this.http.get<any>(this.api+"/"+id)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
+
+  updateStatus(data: any, id:number){
     return this.http.put<any>(this.api+ id, data)
     .pipe(map((res:any)=>{
       return res;
     }))
   }
 
-  deleteStatusStatus(id: number){
+  deleteStatus(id: number){
     return this.http.delete<any>(this.api+ id)
     .pipe(map((res:any)=>{
       return res;

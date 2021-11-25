@@ -23,6 +23,13 @@ export class EmpresaService {
       return res;
     }))
   }
+  
+  getEmpresaID(id:number){
+    return this.http.get<any>(this.api+"/"+id)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
 
   updateEmpresa(data: any, id:number){
     return this.http.put<any>(this.api+ id, data)

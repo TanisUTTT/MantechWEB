@@ -25,6 +25,13 @@ export class UsuarioAPIService {
     }))
   }
 
+  getUsuariosID(id:number){
+    return this.http.get<any>(this.api+"/"+id)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
+
   updateUsuario(data: any, id:number){
     return this.http.put<any>(this.api+ id, data)
     .pipe(map((res:any)=>{

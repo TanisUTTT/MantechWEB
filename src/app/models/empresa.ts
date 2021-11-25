@@ -6,7 +6,7 @@ export class empresaModel{
     claveunica!:string ;
     descripcion!:string ;
     direccion!:string ;
-    fk_estado!:Object;
-    fk_municipio!:Object;
-    fk_statusempresa!:Object;
+    fk_estado!:any;
+    fk_municipio!:any;
+    fk_statusempresa!:any;
 }
