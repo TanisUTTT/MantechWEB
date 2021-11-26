@@ -7,6 +7,7 @@ import { MetodoPagoComponent } from './metodo-pago/metodo-pago.component';
 import { NavComponent } from '../component/nav/nav.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EmpresasComponent } from './empresas/empresas.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RegistrarEmpresaComponent,
     MetodoPagoComponent,
     UsuariosComponent,
+    EmpresasComponent,
   ],
   imports: [
     CommonModule,
