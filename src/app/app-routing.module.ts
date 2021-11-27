@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'pago', component: MetodoPagoComponent},
   { path: 'usuarios', component: UsuariosComponent },
   { path: 'empresas', component: EmpresasComponent },
+  { path: '', component: HomeComponent },
 
 ];
 
