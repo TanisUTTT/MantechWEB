@@ -2,7 +2,7 @@ export class empresaModel{
     id!:number;
     nombre!:string ;
     correo!:string ;
-    contrasena!:string ;
+    contraseña!:string ;
     claveunica!:string ;
     descripcion!:string ;
     direccion!:string ;

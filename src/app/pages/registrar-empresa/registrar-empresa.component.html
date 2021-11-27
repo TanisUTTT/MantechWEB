@@ -8,42 +8,58 @@
                     </div>
                     <div class="card-body p-4 p-sm-5">
                         <h5 class="card-title text-center mb-5 fw-light fs-5">Registrate</h5>
-                        <form>
+                        <form [formGroup]="formValue">
 
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="nombreEmpresa" placeholder="Nombre de la empresa" required autofocus>
-                                <label for="nombreEmpresa">Nombre</label>
+                                <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre de la empresa" required autofocus>
+                                <label>Nombre</label>
                             </div>
 
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="correoElectronico" placeholder="name@example.com">
-                                <label for="correoElectronico">Correo Electronico</label>
+                                <input formControlName="correo" type="email" class="form-control" placeholder="name@example.com">
+                                <label>Correo Electronico</label>
                             </div>
                             <hr>
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="contraseña" placeholder="Password">
-                                <label for="contraseña">Contraseña</label>
+                                <input formControlName="contrasena" autocomplete="on" type="password" class="form-control" placeholder="Password">
+                                <label>Contraseña</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="verificarContraseña" placeholder="Password">
-                                <label for="verificarContraseña">Verificar contraseña</label>
+                                <input formControlName="descripcion" type="text" class="form-control" placeholder="Password">
+                                <label>Descripcion</label>
                             </div>
-
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="descripcion" placeholder="Confirm Password">
-                                <label for="descripcion">Descripción</label>
+                                <input formControlName="claveUnica" type="text" class="form-control" placeholder="Password">
+                                <label>Clave unica</label>
                             </div>
-
+                            <div class=" mb-3">
+                                <label>Status</label>
+                                <select class="form-select" aria-label="Default select example" name="status" [(ngModel)]="idStatus" [ngModelOptions]="{standalone: true}">
+                                    <option *ngFor="let statu of status" [value]="statu.id">{{statu.status_empresa}}</option>
+                            </select>
+                            </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="direccion" placeholder="Confirm Password">
-                                <label for="direccion">Dirección</label>
+                                <input formControlName="direccion" type="text" class="form-control" placeholder="Password">
+                                <label>Direccion</label>
+                            </div>
+                            <div class=" mb-3">
+                                <label>Estado</label>
+                                <select class="form-select" aria-label="Default select example" name="estado" [(ngModel)]="idEstado" [ngModelOptions]="{standalone: true}">
+                                    <option *ngFor="let es of estados" [value]="es.id"> {{es.estado}}</option>
+                                </select>
+                            </div>
+                            <div class=" mb-3">
+                                <label>Municipio</label>
+                                <select class="form-select" aria-label="Default select example" name="municipio" [(ngModel)]="idMunicipio" [ngModelOptions]="{standalone: true}" s>
+                                    <option *ngFor="let municipio of municipios" [value]="municipio.id"> {{municipio.municipio}} </option>
+                                </select>
                             </div>
                             <br>
                             <div class="d-grid mb-2">
-                                <button (click)="irPago()" class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit">Siguiente</button>
+                                <button (click)="post()" class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit">Siguiente</button>
                             </div>
                             <br>
-                            <a class="d-block text-center mt-2 small" href="#">Ya tienes una cuenta? Inicia sesión</a>
+                            <a class="d-block text-center mt-2 small" (click)="clickLogin()">Ya tienes una cuenta? Inicia sesión</a>
                         </form>
                     </div>
                 </div>

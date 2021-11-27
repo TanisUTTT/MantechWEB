@@ -95,7 +95,7 @@ export class UsuariosComponent implements OnInit {
     this.usuarioModelObj.fk_empresa = this.empresas.find( empresaadd => empresaadd.id = 16 );
     this.usuarioModelObj.fk_rol= this.roles.find( roladd => roladd.id = 2 );
     this.usuarioModelObj.fk_statususuario= this.status.find( statusadd => statusadd.id = 3 );
-
+  
     this.api.postUsuario(this.usuarioModelObj)
     .subscribe(res =>{
       console.log(res);

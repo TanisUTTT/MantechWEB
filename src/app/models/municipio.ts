@@ -1,4 +1,4 @@
 export class municipiosModel{
     id!:number;
-    municipios!:string ;
+    municipio!:string ;
 }

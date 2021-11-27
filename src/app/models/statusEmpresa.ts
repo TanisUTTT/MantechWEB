@@ -1,4 +1,4 @@
 export class statusEmpresaModel{
     id!:number;
-    statusEmpresa!:string ;
+    status_empresa!:string ;
 }
