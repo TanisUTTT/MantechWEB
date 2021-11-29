@@ -22,7 +22,7 @@
         </div>
         <div class="col-sm-2">
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalAgregar">
+            <button (click)="clickAdd()" type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalAgregar">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
                   </svg> Agregar
@@ -55,8 +55,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
                                     <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z"/>
                                   </svg>
-                            </button>
-                            &nbsp;
+                            </button> &nbsp;
                                 <button (click)="delete(row)" type="button" class="btn btn-outline-info">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" fill="currentColor" class="bi bi-trash2" viewBox="0 0 16 16">
                                     <path d="M14 3a.702.702 0 0 1-.037.225l-1.684 10.104A2 2 0 0 1 10.305 15H5.694a2 2 0 0 1-1.973-1.671L2.037 3.225A.703.703 0 0 1 2 3c0-1.105 2.686-2 6-2s6 .895 6 2zM3.215 4.207l1.493 8.957a1 1 0 0 0 .986.836h4.612a1 1 0 0 0 .986-.836l1.493-8.957C11.69 4.689 9.954 5 8 5c-1.954 0-3.69-.311-4.785-.793z"/>
@@ -77,54 +76,43 @@
             <div class="modal-content">
                 <form [formGroup]="formValue">
                     <div class="modal-header">
-                        <h4 class="modal-title">Agregar usuario</h4>
-                        <button (click)="clickAddUsuario()" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Detalle Usuario</h4>
                     </div>
                     <div class="modal-body">
-                        <div class="form-group">
+                        <div class="form-floating">
+                            <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre" required />
                             <label>Nombre</label>
-                            <input formControlName="nombre" type="text" class="form-control" required />
                         </div>
-                        <div class="form-group">
+                        <br>
+                        <div class="form-floating">
+                            <input formControlName="apellidoP" type="text" class="form-control" placeholder="Apellido Paterno" required />
                             <label>Apellido Paterno</label>
-                            <input formControlName="apellidoP" id="text" type="text" class="form-control" required />
                         </div>
-                        <div class="form-group">
+                        <br>
+                        <div class="form-floating">
+                            <input formControlName="apellidoM" type="text" class="form-control" placeholder="Apellido Paterno" required />
                             <label>Apellido Materno</label>
-                            <textarea formControlName="apellidoM" id="apellidoP" type="text" class="form-control" required></textarea>
                         </div>
-                        <div class="form-group">
+                        <br>
+                        <div class="form-floating">
+                            <input formControlName="telefono" id="telefono" type="text" class="form-control" placeholder="Apellido Paterno" required />
                             <label>Telefono</label>
-                            <input formControlName="telefono" id="telefono" type="text" class="form-control" required />
                         </div>
-                        <div class="form-group">
+                        <br>
+                        <div class="form-floating">
+                            <input formControlName="correo" id="correo" type="email" class="form-control" placeholder="Apellido Paterno" required />
                             <label>Correo</label>
-                            <input formControlName="correo" id="correo" type="email" class="form-control" required />
                         </div>
-                        <div class="form-group">
+                        <br>
+                        <div class="form-floating">
+                            <input formControlName="contrasena" id="contraseña" type="password" class="form-control" placeholder="Apellido Paterno" required />
                             <label>Contraseña</label>
-                            <input formControlName="contrasena" id="contraseña" type="password" class="form-control" required />
                         </div>
-                        <div class="form-group">
+                        <br>
+                        <div class="form-floating">
+                            <input formControlName="claveEmpresa" id="claveEmpresa" type="text" class="form-control" placeholder="Apellido Paterno" required />
                             <label>Clave empresa</label>
-                            <input formControlName="claveEmpresa" id="claveEmpresa" type="text" class="form-control" required />
                         </div>
-                        <!-- <div class="form-group">
-                            <label for="empresas">Empresa</label>
-                            <select class="form-control form-control-sm" name="empresas" [(ngModel)]="idEmpresa">
-                                <option *ngFor="let empresa of empresas" [value]="empresa.id">{{empresa.nombre}}</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="rol">Rol</label>
-                            <select class="form-control form-control-sm" name="roles" [(ngModel)]="idRol">
-                                <option *ngFor="let rol of roles" [value]="rol.id">{{rol.rol_usuario}}</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Status</label>
-                            <input formControlName="status" id="status" type="text" class="form-control" required />
-                        </div> -->
                     </div>
                     <div class="modal-footer">
                         <button id="cancel" type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cerrar</button>
@@ -136,9 +124,6 @@
         </div>
     </div>
 
-
 </body>
-
-
 
 </html>

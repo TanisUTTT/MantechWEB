@@ -17,7 +17,7 @@ import { UsuarioModel } from 'src/app/models/usuario';
 export class UsuariosComponent implements OnInit {
   formValue!: FormGroup;
   usuarioData!: any;
-  showAdd: boolean = true;
+  showAdd: boolean =true;
   showUpdate: boolean = false;
   usuarioModelObj: UsuarioModel = new UsuarioModel();
   empresas!: empresaModel[];
@@ -63,8 +63,8 @@ export class UsuariosComponent implements OnInit {
     })
   }
 
-  clickAddUsuario(){
-    this.formValue.reset;
+  clickAdd(){
+    this.formValue.reset();
     this.showAdd = true;
     this.showUpdate = false;
   }
@@ -84,14 +84,7 @@ export class UsuariosComponent implements OnInit {
     this.usuarioModelObj.telefono= this.formValue.value.telefono;
     this.usuarioModelObj.correo = this.formValue.value.correo;
     this.usuarioModelObj.contrasena = this.formValue.value.contrasena;
-    //this.usuarioModelObj.fk_empresa = this.formValue.value.empresa;
-    //this.usuarioModelObj.fk_rol= this.formValue.value.rol;
-    // this.usuarioModelObj.fk_statususuario= this.formValue.value.status;
     this.usuarioModelObj.clave_empresa= this.formValue.value.claveEmpresa;
-    
-    //guia
-    //this.dispo.fk_cliente =  this.users.find(useradd=> useradd.id = this.id);
-
     this.usuarioModelObj.fk_empresa = this.empresas.find( empresaadd => empresaadd.id = 16 );
     this.usuarioModelObj.fk_rol= this.roles.find( roladd => roladd.id = 2 );
     this.usuarioModelObj.fk_statususuario= this.status.find( statusadd => statusadd.id = 3 );
@@ -118,7 +111,6 @@ export class UsuariosComponent implements OnInit {
     this.formValue.controls['correo'].setValue(row.correo);
     this.formValue.controls['contrasena'].setValue(row.contrasena);
     this.formValue.controls['claveEmpresa'].setValue(row.clave_empresa);
-    
   }
 
   update(){
@@ -128,14 +120,8 @@ export class UsuariosComponent implements OnInit {
     this.usuarioModelObj.telefono= this.formValue.value.telefono;
     this.usuarioModelObj.correo = this.formValue.value.correo;
     this.usuarioModelObj.contrasena = this.formValue.value.contrasena;
-    //this.usuarioModelObj.fk_empresa = this.formValue.value.empresa;
-    //this.usuarioModelObj.fk_rol= this.formValue.value.rol;
-    // this.usuarioModelObj.fk_statususuario= this.formValue.value.status;
+    this.usuarioModelObj.fk_statususuario= this.formValue.value.status;
     this.usuarioModelObj.clave_empresa= this.formValue.value.claveEmpresa;
-    
-    //guia
-    //this.dispo.fk_cliente =  this.users.find(useradd=> useradd.id = this.id);
-
     this.usuarioModelObj.fk_empresa = this.empresas.find( empresaadd => empresaadd.id = 16 );
     this.usuarioModelObj.fk_rol= this.roles.find( roladd => roladd.id = 2 );
     this.usuarioModelObj.fk_statususuario= this.status.find( statusadd => statusadd.id = 3 );
@@ -147,9 +133,10 @@ export class UsuariosComponent implements OnInit {
       alert("Se Actualizo correctamente")
       let ref = document.getElementById('cancel')
       ref?.click();
-      this.formValue.reset();
+      this.formValue.reset(true);
       this.getAllUsuarios();
     })
   }
+  
 
 }

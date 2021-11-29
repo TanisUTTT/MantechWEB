@@ -113,8 +113,11 @@ export class EmpresasComponent implements OnInit {
     this.showUpdate = true;
     this.modelObj.id=row.id;
     this.formValue.controls['nombre'].setValue(row.nombre);
-    
-    
+    this.formValue.controls['correo'].setValue(row.correo);
+    this.formValue.controls['contrasena'].setValue(row.contraseña);
+    this.formValue.controls['claveUnica'].setValue(row.claveunica);
+    this.formValue.controls['descripcion'].setValue(row.descripcion);
+    this.formValue.controls['direccion'].setValue(row.direccion);
   }
 
   update(){
