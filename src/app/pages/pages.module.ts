@@ -8,6 +8,8 @@ import { NavComponent } from '../component/nav/nav.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmpresasComponent } from './empresas/empresas.component';
+import { MantenimientoComponent } from './mantenimiento/mantenimiento.component';
+import { DispositivosComponent } from './dispositivos/dispositivos.component';
 
 
 @NgModule({
@@ -18,6 +20,8 @@ import { EmpresasComponent } from './empresas/empresas.component';
     MetodoPagoComponent,
     UsuariosComponent,
     EmpresasComponent,
+    MantenimientoComponent,
+    DispositivosComponent,
   ],
   imports: [
     CommonModule,

@@ -83,15 +83,12 @@ export class RegistrarEmpresaComponent implements OnInit {
     .subscribe(res =>{
       console.log(res);
       alert("Se agrego correctamente")
-      
     })
   }
   clickLogin(){
     this.router.navigate(["login"]);
   }
   enviar(){
-    this.router.navigate(['pago']), {
-     
-    }
+    this.router.navigate(['pago']);
   }
 }

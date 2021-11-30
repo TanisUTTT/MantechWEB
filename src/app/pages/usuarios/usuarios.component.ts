@@ -25,6 +25,7 @@ export class UsuariosComponent implements OnInit {
   status!:StatusUsuarioModel[];
   idEmpresa!:any;
   idRol!:any;
+  
  
   constructor(private formBuilder: FormBuilder,private api: UsuarioAPIService, 
     private apiEmpresa: EmpresaService,private apiRol: RolService,
