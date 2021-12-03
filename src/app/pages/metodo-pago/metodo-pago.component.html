@@ -66,19 +66,6 @@
                         </div>
                     </div>
 
-                    <!-- <div class="mb-3">
-                        <label for="username">C</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">@</span>
-                            </div>
-                            <input type="text" class="form-control" id="username" placeholder="Username" required>
-                            <div class="invalid-feedback" style="width: 100%;">
-                                Your username is required.
-                            </div>
-                        </div> 
-                    </div>-->
-
                     <div class="mb-3">
                         <label for="email">Email <span class="text-muted">(Opcional)</span></label>
                         <input type="email" class="form-control" id="email" placeholder="you@example.com">
@@ -186,8 +173,9 @@
                         </div>
                     </div>
                     <hr class="mb-4">
-                    <button class="btn btn-primary btn-lg btn-block" type="submit">Continuar</button>
+                    <button (click)="Guardar()" class="btn btn-primary ">Continuar</button>
                 </form>
+
             </div>
         </div>
 

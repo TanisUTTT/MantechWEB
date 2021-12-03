@@ -78,17 +78,16 @@ export class RegistrarEmpresaComponent implements OnInit {
     this.modelObj.fk_municipio =  this.municipios.find(add=> add.id = this.idMunicipio);
     this.modelObj.fk_estado =  this.estados.find(add=> add.id = this.idEstado);
 
-
-    this.api.postEmpresa(this.modelObj)
-    .subscribe(res =>{
-      console.log(res);
-      alert("Se agrego correctamente")
-    })
+    localStorage.setItem("objetoEmpresa", JSON.stringify(this.modelObj));
+    // this.api.postEmpresa(this.modelObj)
+    // .subscribe(res =>{
+    //   console.log(res);
+    //   alert("Se agrego correctamente")
+    // })
+    this.router.navigate(['pago']);
   }
   clickLogin(){
     this.router.navigate(["login"]);
   }
-  enviar(){
-    this.router.navigate(['pago']);
-  }
+  
 }
