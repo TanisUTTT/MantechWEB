@@ -10,6 +10,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmpresasComponent } from './empresas/empresas.component';
 import { MantenimientoComponent } from './mantenimiento/mantenimiento.component';
 import { DispositivosComponent } from './dispositivos/dispositivos.component';
+import { HomeEmpresaComponent } from './home-empresa/home-empresa.component';
+import { HomeSistemasComponent } from './home-sistemas/home-sistemas.component';
 
 
 @NgModule({
@@ -22,6 +24,8 @@ import { DispositivosComponent } from './dispositivos/dispositivos.component';
     EmpresasComponent,
     MantenimientoComponent,
     DispositivosComponent,
+    HomeEmpresaComponent,
+    HomeSistemasComponent,
   ],
   imports: [
     CommonModule,
