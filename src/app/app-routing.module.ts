@@ -5,6 +5,7 @@ import { DispositivosComponent } from './pages/dispositivos/dispositivos.compone
 import { EmpresasComponent } from './pages/empresas/empresas.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+import { MantenimientoComponent } from './pages/mantenimiento/mantenimiento.component';
 import { MetodoPagoComponent } from './pages/metodo-pago/metodo-pago.component';
 import { RegistrarEmpresaComponent } from './pages/registrar-empresa/registrar-empresa.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'usuarios', component: UsuariosComponent },
   { path: 'empresas', component: EmpresasComponent },
   { path: 'dispositivos', component: DispositivosComponent },
+  { path: 'mantenimiento', component: MantenimientoComponent },
   { path: '', component: HomeComponent },
 
 ];

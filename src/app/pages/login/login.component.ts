@@ -28,10 +28,10 @@ export class LoginComponent implements OnInit {
    this.contrasena = this.formValue.value.contraseña;
     this.api.getLogin(this.correo, this.contrasena)
     .subscribe((data) => {
-      if (data=[]) {
-        alert("Datos incorrectos, vuelve a intentarlo")
-      }else{
+      if (data!=[]) {
         this.router.navigate(['usuarios']);
+      }else{
+        alert("Datos incorrectos, vuelve a intentarlo");
       }
     });
   }
