@@ -11,6 +11,7 @@ import { MantenimientoComponent } from './pages/mantenimiento/mantenimiento.comp
 import { MetodoPagoComponent } from './pages/metodo-pago/metodo-pago.component';
 import { RegistrarEmpresaComponent } from './pages/registrar-empresa/registrar-empresa.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
+import { VideosComponent } from './pages/videos/videos.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'mantenimiento', component: MantenimientoComponent },
   { path: 'homeEmpresas', component: HomeEmpresaComponent },
   { path: 'homeSistemas', component: HomeSistemasComponent },
+  { path: 'videos', component: VideosComponent },
   { path: '', component: HomeComponent },
 
 ];

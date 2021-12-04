@@ -6,7 +6,7 @@ import { map } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  api="https://mantech-back.herokuapp.com/api/UsuariosSF/Auth/";
+  api="https://mantech-back.herokuapp.com/api/UsuariosSF/Session/";
   constructor(private http : HttpClient) { }
   
   getLogin(correo:string, contraseña:string){

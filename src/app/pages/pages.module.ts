@@ -12,6 +12,7 @@ import { MantenimientoComponent } from './mantenimiento/mantenimiento.component'
 import { DispositivosComponent } from './dispositivos/dispositivos.component';
 import { HomeEmpresaComponent } from './home-empresa/home-empresa.component';
 import { HomeSistemasComponent } from './home-sistemas/home-sistemas.component';
+import { VideosComponent } from './videos/videos.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { HomeSistemasComponent } from './home-sistemas/home-sistemas.component';
     DispositivosComponent,
     HomeEmpresaComponent,
     HomeSistemasComponent,
+    VideosComponent,
   ],
   imports: [
     CommonModule,
