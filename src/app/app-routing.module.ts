@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NavComponent } from './component/nav/nav.component';
 import { DispositivosComponent } from './pages/dispositivos/dispositivos.component';
 import { EmpresasComponent } from './pages/empresas/empresas.component';
+import { GraficaComponent } from './pages/grafica/grafica.component';
 import { HomeEmpresaComponent } from './pages/home-empresa/home-empresa.component';
 import { HomeSistemasComponent } from './pages/home-sistemas/home-sistemas.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -10,6 +11,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { MantenimientoComponent } from './pages/mantenimiento/mantenimiento.component';
 import { MetodoPagoComponent } from './pages/metodo-pago/metodo-pago.component';
 import { RegistrarEmpresaComponent } from './pages/registrar-empresa/registrar-empresa.component';
+import { TerminosComponent } from './pages/terminos/terminos.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { VideosComponent } from './pages/videos/videos.component';
 
@@ -27,6 +29,8 @@ const routes: Routes = [
   { path: 'homeEmpresas', component: HomeEmpresaComponent },
   { path: 'homeSistemas', component: HomeSistemasComponent },
   { path: 'videos', component: VideosComponent },
+  { path: 'terminos', component: TerminosComponent },
+  { path: 'grafica', component: GraficaComponent },
   { path: '', component: HomeComponent },
 
 ];

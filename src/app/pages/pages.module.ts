@@ -13,6 +13,8 @@ import { DispositivosComponent } from './dispositivos/dispositivos.component';
 import { HomeEmpresaComponent } from './home-empresa/home-empresa.component';
 import { HomeSistemasComponent } from './home-sistemas/home-sistemas.component';
 import { VideosComponent } from './videos/videos.component';
+import { TerminosComponent } from './terminos/terminos.component';
+import { GraficaComponent } from './grafica/grafica.component';
 
 
 @NgModule({
@@ -28,6 +30,8 @@ import { VideosComponent } from './videos/videos.component';
     HomeEmpresaComponent,
     HomeSistemasComponent,
     VideosComponent,
+    TerminosComponent,
+    GraficaComponent,
   ],
   imports: [
     CommonModule,
