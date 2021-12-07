@@ -95,6 +95,13 @@
                         </div>
                         <br>
                         <div class="form-floating">
+                            <select class="form-control form-control-sm" name="estado" [(ngModel)]="idRol" [ngModelOptions]="{standalone: true}">
+                                <option *ngFor="let u of roles" [value]="u.id"> {{u.rol_usuario}} </option>
+                            </select>
+                            <label>Rol</label>
+                        </div>
+                        <br>
+                        <div class="form-floating">
                             <input formControlName="telefono" id="telefono" type="text" class="form-control" placeholder="Apellido Paterno" required />
                             <label>Telefono</label>
                         </div>
@@ -104,16 +111,17 @@
                             <label>Correo</label>
                         </div>
                         <br>
-                        <div class="form-floating">
+                        <!-- <div class="form-floating">
                             <input formControlName="contrasena" id="contraseña" type="password" class="form-control" placeholder="Apellido Paterno" required />
                             <label>Contraseña</label>
-                        </div>
+                        </div> 
                         <br>
                         <div class="form-floating">
                             <input formControlName="claveEmpresa" id="claveEmpresa" type="text" class="form-control" placeholder="Apellido Paterno" required />
                             <label>Clave empresa</label>
-                        </div>
+                        </div> -->
                     </div>
+
                     <div class="modal-footer">
                         <button id="cancel" type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cerrar</button>
                         <button *ngIf="showAdd" (click)="post()" type="button" class="btn btn-outline-success">Agregar</button>

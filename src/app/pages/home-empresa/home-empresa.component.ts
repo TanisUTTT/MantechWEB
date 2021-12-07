@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { empresaModel } from 'src/app/models/empresa';
 
 @Component({
   selector: 'app-home-empresa',
@@ -9,8 +10,13 @@ import { Router } from '@angular/router';
 export class HomeEmpresaComponent implements OnInit {
 
   constructor(private router:Router) { }
+  Data:any;
+  datosEmpresa: empresaModel = new empresaModel();
 
   ngOnInit(): void {
+  this.Data = localStorage.getItem("objetoEmpresa");
+    this.datosEmpresa=JSON.parse(this.Data);
+    console.log(this.datosEmpresa.nombre);
   }
 
   irUsuarios(){
@@ -19,4 +25,5 @@ export class HomeEmpresaComponent implements OnInit {
   irDispo(){
     this.router.navigate(["dispositivos"]);
   }
+
 }

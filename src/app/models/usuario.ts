@@ -10,5 +10,5 @@ export class UsuarioModel{
     fk_empresa!:any;
     fk_rol!:any;
     fk_statususuario!:any;
-    
+    registrado!:string ;
 }
