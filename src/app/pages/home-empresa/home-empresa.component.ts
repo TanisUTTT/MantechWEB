@@ -25,5 +25,8 @@ export class HomeEmpresaComponent implements OnInit {
   irDispo(){
     this.router.navigate(["dispositivos"]);
   }
+  irSistemas(){
+    this.router.navigate(['usuarios']);
+  }
 
 }

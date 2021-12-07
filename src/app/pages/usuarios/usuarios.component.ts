@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { filter, map } from 'rxjs';
 import { EmailService } from 'src/app/api/email.service';
 import { EmpresaService } from 'src/app/api/empresa.service';
 import { RolService } from 'src/app/api/rol.service';
@@ -69,6 +70,7 @@ export class UsuariosComponent implements OnInit {
     this.idEmpresa= this.datosEmpresa.id;
     console.log("Es el id del localstorage" + this.idEmpresa );
     this.getAllUsuarios();
+    console.log(this.usuarioData)
   }
 
   getAllUsuarios(){
@@ -76,8 +78,7 @@ export class UsuariosComponent implements OnInit {
     .subscribe(res => {
       this.usuarioData = res
     });
-    // const result = this.usuarioData.map(res => res.fk_empresa == this.datosEmpresa)
-    // console.log(result)
+    
   }
 
   clickAdd(){

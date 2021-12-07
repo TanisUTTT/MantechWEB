@@ -15,6 +15,8 @@ import { HomeSistemasComponent } from './home-sistemas/home-sistemas.component';
 import { VideosComponent } from './videos/videos.component';
 import { TerminosComponent } from './terminos/terminos.component';
 import { GraficaComponent } from './grafica/grafica.component';
+import { ComponentModule } from '../component/component.module';
+import { NavEmpresasComponent } from './nav-empresas/nav-empresas.component';
 
 
 @NgModule({
@@ -32,11 +34,13 @@ import { GraficaComponent } from './grafica/grafica.component';
     VideosComponent,
     TerminosComponent,
     GraficaComponent,
+    NavEmpresasComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-  ]
+    ComponentModule
+  ],
 })
 export class PagesModule { }
