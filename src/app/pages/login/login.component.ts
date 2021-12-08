@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
     this.correo = this.formValue.value.correo;
     console.log("El correo de html es " + this.correo)
     this.lolUsua = this.usuarios.findIndex(c => c.correo == this.correo);
-    this.lolEmpre = this.empresas.findIndex(c => c.id == this.correo);
+    this.lolEmpre = this.empresas.findIndex(c => c.correo == this.correo);
     console.log("Usuarios: "+this.lolUsua);
     console.log("Empresas: " +this.lolEmpre);
     this.contrasena = this.formValue.value.contraseña;
@@ -68,7 +68,7 @@ export class LoginComponent implements OnInit {
       }
       if (this.lolEmpre!=-1){
         //alert("Eres empresa")
-        this.api.getloginEmpresa(this.correo)
+        this.api.getloginEmpresa(this.correo, this.contrasena)
         .subscribe((data) => {
           if (data!=null) {
             localStorage.setItem("objetoEmpresa", JSON.stringify(data));
@@ -78,8 +78,8 @@ export class LoginComponent implements OnInit {
           }
         });
       }
-     
-
-
+  }
+  irRegistro(){
+    this.router.navigate(['registrarEmpresa']);
   }
 }

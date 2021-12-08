@@ -46,6 +46,11 @@ export class UsuarioAPIService {
     }))
   }
 
-
+  getUsuariosFK(id:number){
+    return this.http.get<any>(this.api+"Empresa/"+id)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
 
 }

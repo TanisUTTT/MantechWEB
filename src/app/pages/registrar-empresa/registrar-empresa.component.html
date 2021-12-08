@@ -11,7 +11,7 @@
                         <form [formGroup]="formValue">
 
                             <div class="form-floating mb-3">
-                                <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre de la empresa" required autofocus>
+                                <input formControlName="nombre" type="text" class="form-control validationCustom01" placeholder="Nombre de la empresa" required autofocus>
                                 <label>Nombre</label>
                             </div>
 
@@ -32,12 +32,12 @@
                                 <input formControlName="claveUnica" type="text" class="form-control" placeholder="Password">
                                 <label>Clave unica</label>
                             </div>
-                            <div class=" mb-3">
+                            <!-- <div class=" mb-3">
                                 <label>Status</label>
                                 <select class="form-select" aria-label="Default select example" name="status" [(ngModel)]="idStatus" [ngModelOptions]="{standalone: true}">
                                     <option *ngFor="let statu of status" [value]="statu.id">{{statu.status_empresa}}</option>
                             </select>
-                            </div>
+                            </div> -->
                             <div class="form-floating mb-3">
                                 <input formControlName="direccion" type="text" class="form-control" placeholder="Password">
                                 <label>Direccion</label>

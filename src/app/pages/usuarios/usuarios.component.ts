@@ -70,19 +70,8 @@ export class UsuariosComponent implements OnInit {
     this.getAllUsuarios();
   }
 
-  ll(){
-    // this.api.getUsuarios()
-    // .subscribe(res => {
-    //   this.usuarioData = res
-    // });
-    let sistemas = this.usuarioData.filter(usu => usu.fk_empresa === 
-      this.empresas.find( empresaadd => empresaadd.id = this.idEmpresa),
-      )
-    this.usuarioData=sistemas;
-    console.log("aqui"+sistemas)
-  }
   getAllUsuarios(){
-    this.api.getUsuarios()
+    this.api.getUsuariosFK(this.idEmpresa)
     .subscribe(res => {
       this.usuarioData = res
     });
@@ -128,14 +117,15 @@ export class UsuariosComponent implements OnInit {
     this.usuarioModelObj.clave_empresa= this.formValue.value.claveEmpresa;
     this.usuarioModelObj.fk_empresa = this.empresas.find( empresaadd => empresaadd.id = this.idEmpresa );
     this.usuarioModelObj.fk_rol= this.roles.find( roladd => roladd.id = this.idRol );
-    if(this.idRol==2){
-      this.usuarioModelObj.registrado = "No";
-    }
+    
     if(this.idRol==1){
-      this.contrasenaAleatoria = Math.random().toString(36).substr(2, 5);
+      this.contrasenaAleatoria = Math.random().toString(36).substr(2, 6);
       this.enviarContraseña(this.usuarioModelObj.correo,"Contraseña para ingresar a Mantech" , this.contrasenaAleatoria);
       this.usuarioModelObj.fk_statususuario= this.status.find( statusadd => statusadd.id = this.idSta);
       this.usuarioModelObj.contrasena=this.contrasenaAleatoria;
+    }
+    if(this.idRol==2){
+      this.usuarioModelObj.registrado = "No";
     }
 
     this.api.postUsuario(this.usuarioModelObj)

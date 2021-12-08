@@ -58,8 +58,8 @@ export class RegistrarEmpresaComponent implements OnInit {
 
      this.apiMunicipios.getMunicipio().subscribe((data)=>{
        this.municipios=data;
-       
      })
+     this.idStatus=1;
   }
 
   irPago(){
