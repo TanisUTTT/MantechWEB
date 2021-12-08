@@ -12,6 +12,7 @@ export class HomeEmpresaComponent implements OnInit {
   constructor(private router:Router) { }
   Data:any;
   datosEmpresa: empresaModel = new empresaModel();
+  
 
   ngOnInit(): void {
   this.Data = localStorage.getItem("objetoEmpresa");
@@ -23,10 +24,8 @@ export class HomeEmpresaComponent implements OnInit {
     this.router.navigate(["usuarios"]);
   }
   irDispo(){
-    this.router.navigate(["dispositivos"]);
+    this.router.navigate(["dispositivosEmpresa"]);
   }
-  irSistemas(){
-    this.router.navigate(['usuarios']);
-  }
+  
 
 }

@@ -33,6 +33,8 @@ export class UsuariosComponent implements OnInit {
   contrasenaAleatoria!:any;
   Data:any;
   datosEmpresa: empresaModel = new empresaModel();
+  datosUsuario: UsuarioModel = new UsuarioModel();
+
   
  
   constructor(private formBuilder: FormBuilder,private api: UsuarioAPIService, 
@@ -63,22 +65,42 @@ export class UsuariosComponent implements OnInit {
       this.status = data;
     });
     this.idSta=1;
-    this.Data = localStorage.getItem("objetoEmpresa");
-    this.datosEmpresa=JSON.parse(this.Data);
-    this.idEmpresa= this.datosEmpresa.id;
-    console.log(this.datosEmpresa.nombre);
-    this.idEmpresa= this.datosEmpresa.id;
+    this.obtenerQuien();
     console.log("Es el id del localstorage" + this.idEmpresa );
     this.getAllUsuarios();
-    console.log(this.usuarioData)
   }
 
+  ll(){
+    // this.api.getUsuarios()
+    // .subscribe(res => {
+    //   this.usuarioData = res
+    // });
+    let sistemas = this.usuarioData.filter(usu => usu.fk_empresa === 
+      this.empresas.find( empresaadd => empresaadd.id = this.idEmpresa),
+      )
+    this.usuarioData=sistemas;
+    console.log("aqui"+sistemas)
+  }
   getAllUsuarios(){
     this.api.getUsuarios()
     .subscribe(res => {
       this.usuarioData = res
     });
-    
+  }
+  obtenerQuien() {
+    let datoEmpresa = localStorage.getItem("objetoEmpresa");
+    let datoUsuario = localStorage.getItem("objetoUsuario");
+    if(datoEmpresa != null){
+        this.Data = localStorage.getItem("objetoEmpresa");
+        this.datosEmpresa=JSON.parse(this.Data);
+        this.idEmpresa= this.datosEmpresa.id;
+    }
+    if(datoUsuario != null){
+      this.Data = localStorage.getItem("objetoUsuario");
+      this.datosUsuario=JSON.parse(this.Data);
+      this.datosEmpresa=this.datosUsuario.fk_empresa;
+      this.idEmpresa= this.datosEmpresa.id;
+  }
   }
 
   clickAdd(){

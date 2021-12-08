@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
   lolEmpre !:any;
 
   ngOnInit(): void {
+    localStorage.clear();
     this.formValue= this.formBuilder.group({
       correo : [''],
       contraseña : [''],
@@ -58,7 +59,8 @@ export class LoginComponent implements OnInit {
           this.api.getLogin(this.correo, this.contrasena)
           .subscribe((data) => {
           if (data!=null) {
-            this.router.navigate(['usuarios']);
+            localStorage.setItem("objetoUsuario", JSON.stringify(data))
+            this.router.navigate(['homeSistemas']);
           }else{
             alert("Datos incorrectos, vuelve a intentarlo");
           }

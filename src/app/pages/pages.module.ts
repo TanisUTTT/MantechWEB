@@ -17,6 +17,8 @@ import { TerminosComponent } from './terminos/terminos.component';
 import { GraficaComponent } from './grafica/grafica.component';
 import { ComponentModule } from '../component/component.module';
 import { NavEmpresasComponent } from './nav-empresas/nav-empresas.component';
+import { UsuariosEmpresasComponent } from './usuarios-empresas/usuarios-empresas.component';
+import { DispostivosEmpresasComponent } from './dispostivos-empresas/dispostivos-empresas.component';
 
 
 @NgModule({
@@ -35,6 +37,8 @@ import { NavEmpresasComponent } from './nav-empresas/nav-empresas.component';
     TerminosComponent,
     GraficaComponent,
     NavEmpresasComponent,
+    UsuariosEmpresasComponent,
+    DispostivosEmpresasComponent,
   ],
   imports: [
     CommonModule,
